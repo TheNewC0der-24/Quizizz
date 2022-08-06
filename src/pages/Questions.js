@@ -3,8 +3,18 @@ import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 import useAxios from "../hooks/useAxios";
+import { useSelector } from "react-redux";
 
 const Questions = () => {
+
+    const {
+        question_category,
+        question_difficulty,
+        question_type,
+        amount_of_question
+    } = useSelector(state => state);
+    console.log(amount_of_question);
+
 
     let apiUrl = `/api.php?amount=10`
 
