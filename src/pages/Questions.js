@@ -78,7 +78,7 @@ const Questions = () => {
                     Question - {questionIndex + 1}
                 </Typography>
                 <div>
-                    <Button variant="contained">Score : {score} / {response.results.length}</Button>
+                    <Button variant="outlined">Score : {score} / {response.results.length}</Button>
                 </div>
             </div>
             <br />
