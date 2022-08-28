@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Typography } from "@mui/material";
+import { Button, CircularProgress, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 import useAxios from "../hooks/useAxios";
@@ -13,13 +13,27 @@ const Questions = () => {
         question_type,
         amount_of_question
     } = useSelector(state => state);
-    console.log(amount_of_question);
 
-
-    let apiUrl = `/api.php?amount=10`
+    let apiUrl = `/api.php?amount=${amount_of_question}`;
+    if (question_category) {
+        apiUrl = apiUrl.concat(`&category=${question_category}`);
+    }
+    if (question_difficulty) {
+        apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`);
+    }
+    if (question_type) {
+        apiUrl = apiUrl.concat(`&type=${question_type}`);
+    }
 
     const { response, loading } = useAxios({ url: apiUrl })
 
+    if (loading) {
+        return (
+            <Box style={{ display: 'flex', justifyContent: 'center' }} mt={20}>
+                <CircularProgress />
+            </Box>
+        )
+    }
 
     return (
         <Box>
