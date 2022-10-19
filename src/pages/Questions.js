@@ -77,7 +77,7 @@ const Questions = () => {
                     Question - {questionIndex + 1}
                 </Typography>
                 <div>
-                    <Button variant="outlined">Score : {score} / {response.results.length}</Button>
+                    <Button color="error" variant="outlined">Score : {score} / {response.results.length}</Button>
                 </div>
             </div>
             <br />
@@ -87,7 +87,7 @@ const Questions = () => {
             </Typography>
             {options.map((data, id) => (
                 <Box mt={2} key={id}>
-                    <Button onClick={handleAnswer} variant="contained">{decode(data)}</Button>
+                    <Button color="secondary" onClick={handleAnswer} variant="contained">{decode(data)}</Button>
                 </Box>
             ))}
         </Box>
