@@ -87,7 +87,7 @@ const Questions = () => {
             </Typography>
             {options.map((data, id) => (
                 <Box mt={2} key={id}>
-                    <Button onClick={handleAnswer} variant="contained">{data}</Button>
+                    <Button onClick={handleAnswer} variant="contained">{decode(data)}</Button>
                 </Box>
             ))}
         </Box>
