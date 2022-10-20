@@ -14,6 +14,13 @@ Use the Quizizz app to learn anything, anywhere. You can study on your own or en
 |React.JS|Material-UI|Redux|
 |---|---|---|
 
+## Hosted on 
+|Netlify|
+|---|
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3da2ea4d-5893-48ae-b6f9-e0bce4c91c4a/deploy-status)](https://app.netlify.com/sites/quizizz-redux/deploys)
+
+>Hence, accessible to everyone.
+
 <details>
 <summary>
 <h2>Installed Dependencies</h2>
@@ -45,7 +52,7 @@ npm install html-entities
 
 ## Link
 ```
-
+https://quizizz-redux.netlify.app/
 ```
 
 ---
