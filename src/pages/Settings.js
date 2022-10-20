@@ -1,10 +1,11 @@
 import React from "react";
-import { Card, CardHeader, CardContent, Button, CircularProgress, Typography } from "@mui/material";
+import { Divider, Card, CardHeader, CardContent, Button, CircularProgress, Typography } from "@mui/material";
 import SelectField from "../components/SelectField";
 import { Box } from "@mui/system";
 import TextField from "../components/TextField";
 import useAxios from "../hooks/useAxios";
 import { useNavigate } from "react-router-dom";
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const Settings = () => {
 
@@ -45,9 +46,11 @@ const Settings = () => {
     }
 
     return (
-        <Card>
-            <CardHeader sx={{ textAlign: "center" }} title="QUIZ App" />
+        <Card style={{ borderTop: "5px solid #1976d2" }}>
+            <Typography variant="h4" textAlign="center" mt={3} mb={3}>QUIZ App</Typography>
+            <Divider />
             <CardContent>
+                <Button mb={5} variant="outlined" style={{ display: "flex", justifyContent: "end", marginLeft: "auto" }}><SettingsIcon className="setting-icon" /> Settings</Button>
                 <form onSubmit={handleSubmit}>
                     <SelectField options={response.trivia_categories} label="Category" />
                     <SelectField options={difficultyOptions} label="Difficulty" />
